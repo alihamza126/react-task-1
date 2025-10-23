@@ -11,18 +11,12 @@ import StickySidebar from './components/StickySidebar.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
-    <Provider store={store} >
-      <div className='flex flex-row'>
-        <div className='w-[100px] md:min-h-screen inline md:w-[100px] bg-black'>
-          <StickySidebar />
-        </div>
-        <div className='flex flex-col w-full'>
-          <Routes>
-            <Route path='/' element={<App />} />
-            <Route path='/invoice-details' element={<InvoiceDetails />} />
-          </Routes>
-        </div>
-      </div>
+    <Provider store={store}>
+      <StickySidebar /> 
+      <Routes>
+        <Route path='/' element={<App />} />
+        <Route path='/invoice-details' element={<InvoiceDetails />} />
+      </Routes>
     </Provider>
   </BrowserRouter>
 
