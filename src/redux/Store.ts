@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import reducer from "./Slice";
+import reducer from "./slice/InvoiceSlice";
 
 const persistedState = localStorage.getItem("reduxState")
    ? JSON.parse(localStorage.getItem("reduxState") || "")

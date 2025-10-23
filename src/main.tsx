@@ -4,8 +4,8 @@ import App from './App.tsx'
 import { store } from './redux/Store.ts'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import InvoiceDetails from './pages/InvoiceDetails.tsx'
-import StickySidebar from './components/StickySidebar.tsx'
+import InvoiceDetails from './pages/InvoiceDetails/InvoiceDetails.tsx'
+import StickySidebar from './components/StickySidebar/StickySidebar.tsx'
 
 
 

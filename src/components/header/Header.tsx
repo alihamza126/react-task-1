@@ -95,4 +95,5 @@ const Header = ({ onClick, filterChange, lenght }: headerProps) => {
     );
 };
 
-export default Header;
+
+export default Header

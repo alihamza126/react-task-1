@@ -1,11 +1,11 @@
 import { Formik, Form, Field, ErrorMessage, FieldArray } from "formik";
-import { validationSchema } from "../validations/formSchema";
+import { validationSchema } from "../../validations";
 import { FaTrash } from "react-icons/fa";
-import initialValues from "../lib/initialState";
+import { initialValues } from "../../lib";
 import { useDispatch } from "react-redux";
-import { addFormData, updateFormData } from "../redux/Slice";
 import type React from "react";
-import type { InvoiceForm } from "../types";
+import type { InvoiceForm } from "../../types";
+import { addFormData, updateFormData } from "../../redux/slice/InvoiceSlice";
 
 type sidebarProps = {
     isOpen: boolean;

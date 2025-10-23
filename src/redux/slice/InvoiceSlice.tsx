@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { InvoiceForm } from "../types";
+import type { InvoiceForm } from "../../types";
 
 interface InvoiceState {
     forms: InvoiceForm[];

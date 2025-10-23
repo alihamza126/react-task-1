@@ -1,6 +1,5 @@
 import * as Yup from "yup";
-
-export const validationSchema = Yup.object().shape({
+const validationSchema = Yup.object().shape({
    invoiceNumber: Yup.string().required("Invoice number is required"),
    status: Yup.string().required("Status is required"),
    billFrom: Yup.object({
@@ -38,3 +37,6 @@ export const validationSchema = Yup.object().shape({
       })
    ),
 });
+
+
+export default validationSchema
