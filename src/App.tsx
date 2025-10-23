@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Header from './components/header';
 import type { InvoiceForm } from './types';
-import StickySidebar from './components/StickySidebar';
 
 function App() {
   const [isOpenSideBar, setIsOpenSideBar] = useState(false);

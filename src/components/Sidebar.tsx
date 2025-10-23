@@ -54,7 +54,7 @@ const InvoiceSidebar = ({ isOpen, onClose, isUpdate = false, invoice = initialVa
                             handleSubmit(values);
                         }}
                     >
-                        {({ values, errors }) => (
+                        {({ values }) => (
                             <Form className="space-y-6">
                                 {/* BILL FROM */}
                                 <section>

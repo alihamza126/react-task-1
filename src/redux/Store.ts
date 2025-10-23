@@ -2,14 +2,13 @@ import { configureStore } from "@reduxjs/toolkit";
 import reducer from "./Slice";
 
 const persistedState = localStorage.getItem("reduxState")
-   ? JSON.parse(localStorage.getItem("reduxState"))
+   ? JSON.parse(localStorage.getItem("reduxState") || "")
    : {};
 
-   
 export const store = configureStore({
    reducer: {
       invoice: reducer,
-   },
+   } as any,
    preloadedState: persistedState,
 });
 
