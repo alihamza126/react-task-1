@@ -60,7 +60,7 @@ const InvoiceDetails = () => {
             <Button color='secondary' onClick={() => setSidebarOpen(true)} >Edit</Button>
             <Button color='danger' onClick={() => handleDelete(invoice.invoiceNumber)} showAlert>Delete</Button>
             {
-              invoice.status === 'pending' && <Button color='primary' onClick={() => handlePaid(invoice.invoiceNumber)}>Mark <a href=""></a>s paid</Button>
+              invoice.status === 'pending' && <Button color='primary' onClick={() => handlePaid(invoice.invoiceNumber)}>Mark as paid</Button>
             }
           </div>
         </div>
