@@ -2,6 +2,7 @@ import { IoAddCircleOutline } from "react-icons/io5";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
+import Button from "../../shared/Button/Button";
 
 
 type headerProps = {
@@ -73,12 +74,12 @@ const Header = ({ onClick, filterChange, lenght }: headerProps) => {
 
                 {/* New Invoice Button (Desktop) */}
                 <div className="hidden md:flex items-center">
-                    <button
+                    <Button
+                        color="primary"
                         onClick={onClick}
-                        className="px-4 py-2 flex items-center gap-x-2 bg-[#7C5CFB] text-white rounded-full"
                     >
                         <IoAddCircleOutline size={24} /> New Invoice
-                    </button>
+                    </Button>
                 </div>
             </div>
 

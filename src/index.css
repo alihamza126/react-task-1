@@ -3,68 +3,16 @@
 @theme {
    --color-primary: #7c5cfb;
 }
-@media (prefers-color-scheme: light) {
-   :root {
-      color: #213547;
-      background-color: #f7f8f8;
-   }
-}
 
-label{
-   @apply text-xs!   whitespace-nowrap ;
-}
+
+
+
+
 .primary-text {
    @apply text-[#7F88C3];
 }
-.bg-primary {
-   @apply bg-[#7C5CFB];
-   @apply text-white;
-}
 
-.text {
-   @apply text-[#7F88C3];
-}
 
-.input-form {
-   @apply flex flex-col gap-y-0;
-}
-.input {
-   @apply w-full border-gray-200 outline-amber-300 py-4;
-}
-
-input {
-   width: 100%;
-   padding: 10px;
-   margin: 8px 0;
-   box-sizing: border-box;
-   border: 2px solid #c7d1e5;
-   border-radius: 5px;
-   transition: 0.5s;
-   outline: none;
-}
-.input {
-   width: 100%;
-   padding: 13px 10px;
-   margin: 8px 0;
-   box-sizing: border-box;
-   border: 2.2px solid #c7d1e5;
-   border-radius: 5px;
-   transition: 0.5s;
-   outline: none;
-}
-
-label {
-   @apply text-gray-500;
-}
-
-.error {
-   @apply text-red-600;
-}
-
-input:focus {
-   border: 2.2px solid #7c5cfb;
-   transition: 0.1s;
-}
 
 .card-shadow {
    @apply shadow-[3px_20px_20px_3px_rgba(0,_0,_0,_0.30)];

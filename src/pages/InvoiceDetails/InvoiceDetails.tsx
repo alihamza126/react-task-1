@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { BiCaretLeft } from "react-icons/bi";
 import { useDispatch, useSelector } from 'react-redux';
-import type { InvoiceForm } from '../../types';
-import { InvoiceSidebar } from '../../components';
 import { deleteFormData, setPaidData } from '../../redux/slice/InvoiceSlice';
-
+import Drawer from '../../components/Drawer';
+import Button from '../../shared/Button/Button';
+import Chip from '../../shared/chip';
+import { BiCaretLeft } from "react-icons/bi";
+import type { InvoiceForm } from '../../types';
 
 const InvoiceDetails = () => {
   const location = useLocation()
@@ -40,7 +41,7 @@ const InvoiceDetails = () => {
 
   return (
     <div className='md:px-32 ms-0 md:ms-[100px] md:py-20 flex flex-col md:items-center justify-around '>
-      <InvoiceSidebar isOpen={sidebarOpen} invoice={invoice} isUpdate={true} onClose={handleClose} />
+      <Drawer isOpen={sidebarOpen} invoice={invoice} isUpdate={true} onClose={handleClose} />
       {/* //for back */}
       <div className='sm:w-5xl md:w-7xl'>
         <div className='w-full'>
@@ -53,13 +54,13 @@ const InvoiceDetails = () => {
         <div className='flex md:flex-row  flex-col mt-5 py-10 shadow-2xs gap-y-3   card-shadow bg-white px-8 rounded-xl justify-between'>
           <div className=' capitalize flex items-center justify-center gap-6 '>
             <h2>Status</h2>
-            <span className={invoice.status === 'pending' ? 'bg-yellow-100 text-orange-400 px-2 py-1 rounded-sm' : 'bg-green-100 text-green-300  px-4  py-3 rounded-sm'}>{invoice.status}</span>
+            <Chip color={invoice.status === 'pending' ? 'warning' : 'success'}>{invoice.status}</Chip>
           </div>
           <div className='flex gap-2 justify-center text-xs md:text-[18px]'>
-            <button onClick={() => setSidebarOpen(true)} className='bg-gray-400 text-white px-6 py-2 rounded-full'>Edit</button>
-            <button onClick={() => handleDelete(invoice.invoiceNumber)} className='bg-red-400 text-white px-6 py-2 rounded-full'>Delete</button>
-            {invoice.status !== "paid" &&
-              <button onClick={() => handlePaid(invoice.invoiceNumber)} className='bg-primary text-white px-6 py-2 rounded-full'>Mark as Paid</button>
+            <Button color='secondary' onClick={() => setSidebarOpen(true)} >Edit</Button>
+            <Button color='danger' onClick={() => handleDelete(invoice.invoiceNumber)} showAlert>Delete</Button>
+            {
+              invoice.status === 'pending' && <Button color='primary' onClick={() => handlePaid(invoice.invoiceNumber)}>Mark <a href=""></a>s paid</Button>
             }
           </div>
         </div>
